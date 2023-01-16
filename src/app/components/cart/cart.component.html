@@ -1,0 +1,13 @@
+<div class="row" >
+    <div class="col-3 mt-2" *ngFor="let fashion of fashions">
+      <div class="card">
+          <img class="card-img-top" [src]="fashion.image" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{fashion.description}}</h5>
+            <p class="card-text">{{fashion.price}}</p>
+            <div *ngIf="fashion.fashion_id" class="col btn btn-danger" (click)="deleteitemFashion(fashion.fashion_id)"><i class="fa-sharp fa-solid fa-trash"></i></div>
+            <div *ngIf="fashion.electronic_id" class="col btn btn-primary" (click)="deleteitemElectronic(fashion.electronic_id)"><i class="fa-sharp fa-solid fa-trash"></i></div>
+          </div>
+        </div>  
+    </div>   
+</div>

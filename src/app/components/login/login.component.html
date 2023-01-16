@@ -1,0 +1,32 @@
+    <div class="container-fluid vh-100 root">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-6">
+                    <div class="container">
+                        <div class="row my-5 text-center">
+                            <h1>LogIn</h1>
+                        </div>
+                        <div class="row">
+                            <div class="col text-center">
+                                <input class="my-2" type="text" id="username"placeholder="username" [(ngModel)]="username"><br>
+                                <input class="my-2" type="password" id="password" placeholder="password" [(ngModel)]="password"><i class="fa-solid fa-eye" (click)="togglePassword()"></i>
+                                
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col text-center">
+                                <button class="btn my-2 submit" (click)="submit()">LogIn</button>
+                            </div>
+
+                        </div>
+                        <div class="row text-center">
+                            <span>Not a member-<a href="../signup/index.html">SignUp</a></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6"></div>
+            </div>
+        </div>
+    </div>

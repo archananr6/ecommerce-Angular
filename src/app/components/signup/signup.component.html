@@ -1,0 +1,90 @@
+<div class="container-fluid vh-100 root">
+  <div class="container">
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4">
+        <div class="row my-5 text-center">
+          <h1>SignUp</h1>
+        </div>
+        <div class="row">
+          <div class="row my-5" >
+            <form [formGroup]="registerForm">
+              <input
+                class="form-control"
+                name="name"
+                type="text"
+                id="name"
+                class="my-2"
+                placeholder="Name"
+                formControlName="name"
+                minlength="4"
+              />
+              <div
+                *ngIf="
+                  registerForm.get('name')!.invalid &&
+                  registerForm.get('name')!.touched
+                "
+                class="alert"
+              >
+                <span class="text-danger">name is required</span>
+              </div>
+              <input
+                type="text"
+                name="email"
+                id="email"
+                class="my-2"
+                placeholder="E-mail"
+                formControlName="email"
+              />
+              <div
+                *ngIf="
+                  registerForm.get('email')!.invalid &&
+                  registerForm.get('email')!.touched
+                "
+                class="alert"
+              >
+                <span class="text-danger">email is required</span>
+              </div>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                class="my-2"
+                placeholder="Password"
+                password=""
+                formControlName="password"
+              />
+              <div
+                *ngIf="
+                  registerForm.get('password')!.invalid &&
+                  registerForm.get('password')!.touched
+                "
+                class="alert"
+              >
+                <span class="text-danger">password is required</span>
+              </div>
+              <input
+                type="password"
+                class="my-2"
+                id="confirmpassword"
+                placeholder="ConfirmPassword"
+                formControlName="confirmPassword"
+              />
+              <div
+                *ngIf="
+                  registerForm.get('confirmpassword')!.invalid &&
+                  registerForm.get('confirmpassword')!.touched
+                "
+                class="alert"
+              >
+                <span class="text-danger">confirm password is required</span>
+              </div>
+
+              <button name="submit" id="submit" class="btn" (click)="submit()">submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

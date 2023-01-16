@@ -1,0 +1,50 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Product Image</th>
+        <th scope="col">Product Description</th>
+        <th scope="col">price</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fashion of fashions">
+          <td>{{fashion.id}}</td>
+          <td>{{fashion.image}}</td>
+          <td >{{fashion.description}}</td>
+          <td>{{fashion.price}}</td>
+          <td><i class="fa-solid fa-trash" (click)="deletefashion(fashion.id)"></i></td>
+          <td ><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+           <i class="fa-solid fa-pen-to-square" (click)="updatefashion(fashion.id)" ></i>
+          </button></td>
+          <td><i class="fa-solid fa-plus" (click)="add()"></i></td>
+      </tr>
+    </tbody>
+  </table>
+
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <input type="text" id="id">
+          <input name="first" id="image" />
+          <input name="last" id="description" />
+          <input type="text" id="price">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary"(click)="savechanges()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
