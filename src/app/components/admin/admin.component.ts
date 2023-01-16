@@ -10,11 +10,18 @@ import { ApiService } from '../../api.service';
 export class AdminComponent {
   fashions:any;
   temp:any;
+  usertype:any;
 constructor(private service: ApiService,private router:Router){
-  this.service.getfashion().subscribe(data=>{
+ this.usertype= JSON.parse( localStorage.getItem("token")||"").usertype
+  if(this.usertype=="admin"){
+    this.service.getfashion().subscribe(data=>{
     this.fashions=data
+    
     console.log(data);
   })
+  }
+  
+
  
 }
 

@@ -27,15 +27,12 @@ export class ApiService {
     });
   }
   loginUser(username: string, password: string) {
-    console.log(username,password)
     return this.http.post("http://localhost:3000/login",{username:username,password:password})
-
   }
   addfashion(data:any){
     return this.http.post("http://localhost:3000/addfashion",data,{headers:{"Authorization": `Bearer ${sessionStorage.getItem('jwt')}`}})
   }
   addelectronic(data:any){
-    console.log(data)
     return this.http.post("http://localhost:3000/addelectronic",data,{headers:{"Authorization": `Bearer ${sessionStorage.getItem('jwt')}`}})
   }
   getfashion(){
@@ -66,7 +63,6 @@ export class ApiService {
     return this.http.delete(`http://localhost:3000/deletefashion/${id}`,{headers:{"Authorization": `Bearer ${sessionStorage.getItem('jwt')}`}})
   }
   updatefashion(id:any,body:any){
-    console.log(id,body)
     return this.http.put(`http://localhost:3000/updatefashion/${id}`,body,{headers:{"Authorization": `Bearer ${sessionStorage.getItem('jwt')}`}})
   }
   getFashion(id:any){

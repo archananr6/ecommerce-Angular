@@ -36,13 +36,7 @@
                 placeholder="E-mail"
                 formControlName="email"
               />
-              <div
-                *ngIf="
-                  registerForm.get('email')!.invalid &&
-                  registerForm.get('email')!.touched
-                "
-                class="alert"
-              >
+              <div *ngIf="registerForm.get('email')!.invalid && registerForm.get('email')!.touched"class="alert">
                 <span class="text-danger">email is required</span>
               </div>
               <input
@@ -70,13 +64,8 @@
                 placeholder="ConfirmPassword"
                 formControlName="confirmPassword"
               />
-              <div
-                *ngIf="
-                  registerForm.get('confirmpassword')!.invalid &&
-                  registerForm.get('confirmpassword')!.touched
-                "
-                class="alert"
-              >
+              <div *ngIf="registerForm.get('confirmpassword')!.invalid &&registerForm.get('confirmpassword')!.touched"
+                class="alert">
                 <span class="text-danger">confirm password is required</span>
               </div>
 
