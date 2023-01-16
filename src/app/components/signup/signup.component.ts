@@ -21,7 +21,6 @@ export class SignupComponent {
   }
 
   submit(){
-      console.log(this.registerForm)
     if(this.registerForm.invalid ){
       alert("Please enter a valid registration");
     }else{

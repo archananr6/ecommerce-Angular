@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 
@@ -9,14 +10,17 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
- username: string ="";
- password:string ="";
-  serverResponse:any;
+loginForm!: FormGroup;
+ 
+serverResponse:any;
  constructor(private service: ApiService,private router: Router){
-
+this.loginForm=new FormGroup({
+  username:new FormControl('',[Validators.required,Validators.email]),
+  password:new FormControl('',[Validators.required]),
+})
  }
  submit(){
-  this.service.loginUser(this.username, this.password).subscribe(data=>{
+  this.service.loginUser(this.loginForm.value.username, this.loginForm.value.password).subscribe(data=>{
     console.log(data);
     this.serverResponse=data;
     if(this.serverResponse.invalid){
